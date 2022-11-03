@@ -230,7 +230,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/library-flask-app/dev/1667283832327-2022-11-01T06:23:52.327Z/library-flask-app.zip"
+                "S3Key": "serverless/library-flask-app/dev/1667456696424-2022-11-03T06:24:56.424Z/library-flask-app.zip"
               },
               "Handler": "wsgi_handler.handler",
               "Runtime": "python3.8",
@@ -260,7 +260,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/library-flask-app/dev/1667283832327-2022-11-01T06:23:52.327Z/library-flask-app.zip"
+                "S3Key": "serverless/library-flask-app/dev/1667456696424-2022-11-03T06:24:56.424Z/library-flask-app.zip"
               },
               "Handler": "wsgi_handler.handler",
               "Runtime": "python3.8",
@@ -290,7 +290,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/library-flask-app/dev/1667283832327-2022-11-01T06:23:52.327Z/library-flask-app.zip"
+                "S3Key": "serverless/library-flask-app/dev/1667456696424-2022-11-03T06:24:56.424Z/library-flask-app.zip"
               },
               "Handler": "wsgi_handler.handler",
               "Runtime": "python3.8",
@@ -320,7 +320,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/library-flask-app/dev/1667283832327-2022-11-01T06:23:52.327Z/library-flask-app.zip"
+                "S3Key": "serverless/library-flask-app/dev/1667456696424-2022-11-03T06:24:56.424Z/library-flask-app.zip"
               },
               "Handler": "wsgi_handler.handler",
               "Runtime": "python3.8",
@@ -350,7 +350,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/library-flask-app/dev/1667283832327-2022-11-01T06:23:52.327Z/library-flask-app.zip"
+                "S3Key": "serverless/library-flask-app/dev/1667456696424-2022-11-03T06:24:56.424Z/library-flask-app.zip"
               },
               "Handler": "wsgi_handler.handler",
               "Runtime": "python3.8",
@@ -380,7 +380,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/library-flask-app/dev/1667283832327-2022-11-01T06:23:52.327Z/library-flask-app.zip"
+                "S3Key": "serverless/library-flask-app/dev/1667456696424-2022-11-03T06:24:56.424Z/library-flask-app.zip"
               },
               "Handler": "wsgi_handler.handler",
               "Runtime": "python3.8",
@@ -403,64 +403,64 @@
               "DeleteItemLogGroup"
             ]
           },
-          "AppLambdaVersionrHd5tTmxYjEXb0HKfNVEQOTtRV7ROD51k3POY4R5WJg": {
+          "AppLambdaVersionObOitzVzBKxqj6eTfxO7ax1UTXZjyqmun32ixeJyRsI": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "AppLambdaFunction"
               },
-              "CodeSha256": "RZQXOnPqsky+j2K4RKt7g5D3XAJdbNsZRPEeehal4XY="
+              "CodeSha256": "rS6Uy/ijF7/2Cyi3GpPbO9B+IVJ7oxtZHz99GrQAN8Y="
             }
           },
-          "CreateItemLambdaVersionumtHBXiKEY8ckvo0GZ02RsfmGGL8dpSYGoTcjy2OOY": {
+          "CreateItemLambdaVersiongIeNObYWlukyjBGQFJWFGA4qGFgdYwcNG6XK0BZHU": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "CreateItemLambdaFunction"
               },
-              "CodeSha256": "RZQXOnPqsky+j2K4RKt7g5D3XAJdbNsZRPEeehal4XY="
+              "CodeSha256": "rS6Uy/ijF7/2Cyi3GpPbO9B+IVJ7oxtZHz99GrQAN8Y="
             }
           },
-          "ListLambdaVersionQWshCbwgNHKMiWbVOzpxhaKcViMePqAMeAgsUw1azA": {
+          "ListLambdaVersionqBQ8s49pFfHbFCyjXsHkQmJAI9mbezoCsvaL6VvTGPQ": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "ListLambdaFunction"
               },
-              "CodeSha256": "RZQXOnPqsky+j2K4RKt7g5D3XAJdbNsZRPEeehal4XY="
+              "CodeSha256": "rS6Uy/ijF7/2Cyi3GpPbO9B+IVJ7oxtZHz99GrQAN8Y="
             }
           },
-          "GetItemLambdaVersionR79ESm84piPXaipswfvFCCBhMxU15Y3LpPgvrYmhYE": {
+          "GetItemLambdaVersionfQAvrnayzITV4QnldEEPoGZgWDOv6nRNuHtV26XLNJM": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "GetItemLambdaFunction"
               },
-              "CodeSha256": "RZQXOnPqsky+j2K4RKt7g5D3XAJdbNsZRPEeehal4XY="
+              "CodeSha256": "rS6Uy/ijF7/2Cyi3GpPbO9B+IVJ7oxtZHz99GrQAN8Y="
             }
           },
-          "UpdateItemLambdaVersionIH9xIGbAS5PTm9Q2mavehdNSKAAp4pu0ULcQV9tF44w": {
+          "UpdateItemLambdaVersion5PD7a6k69f9Kb0fD7vQu1Xc6qlmHB8nB5EvO45F3s": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "UpdateItemLambdaFunction"
               },
-              "CodeSha256": "RZQXOnPqsky+j2K4RKt7g5D3XAJdbNsZRPEeehal4XY="
+              "CodeSha256": "rS6Uy/ijF7/2Cyi3GpPbO9B+IVJ7oxtZHz99GrQAN8Y="
             }
           },
-          "DeleteItemLambdaVersionhWhz9BEaP0BgVfOsvLXJy2bAM0M9dqHObMPtirG6eE": {
+          "DeleteItemLambdaVersionF0B2oZgCpV37NLmiLPFV6n6DFzQlDEHmmi5ZH70wwU": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "DeleteItemLambdaFunction"
               },
-              "CodeSha256": "RZQXOnPqsky+j2K4RKt7g5D3XAJdbNsZRPEeehal4XY="
+              "CodeSha256": "rS6Uy/ijF7/2Cyi3GpPbO9B+IVJ7oxtZHz99GrQAN8Y="
             }
           },
           "ApiGatewayRestApi": {
@@ -826,7 +826,7 @@
               "DeleteItemLambdaPermissionApiGateway"
             ]
           },
-          "ApiGatewayDeployment1667283818131": {
+          "ApiGatewayDeployment1667456671368": {
             "Type": "AWS::ApiGateway::Deployment",
             "Properties": {
               "RestApiId": {
@@ -1100,7 +1100,7 @@
           "AppLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "AppLambdaVersionrHd5tTmxYjEXb0HKfNVEQOTtRV7ROD51k3POY4R5WJg"
+              "Ref": "AppLambdaVersionObOitzVzBKxqj6eTfxO7ax1UTXZjyqmun32ixeJyRsI"
             },
             "Export": {
               "Name": "sls-library-flask-app-dev-AppLambdaFunctionQualifiedArn"
@@ -1109,7 +1109,7 @@
           "CreateItemLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "CreateItemLambdaVersionumtHBXiKEY8ckvo0GZ02RsfmGGL8dpSYGoTcjy2OOY"
+              "Ref": "CreateItemLambdaVersiongIeNObYWlukyjBGQFJWFGA4qGFgdYwcNG6XK0BZHU"
             },
             "Export": {
               "Name": "sls-library-flask-app-dev-CreateItemLambdaFunctionQualifiedArn"
@@ -1118,7 +1118,7 @@
           "ListLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "ListLambdaVersionQWshCbwgNHKMiWbVOzpxhaKcViMePqAMeAgsUw1azA"
+              "Ref": "ListLambdaVersionqBQ8s49pFfHbFCyjXsHkQmJAI9mbezoCsvaL6VvTGPQ"
             },
             "Export": {
               "Name": "sls-library-flask-app-dev-ListLambdaFunctionQualifiedArn"
@@ -1127,7 +1127,7 @@
           "GetItemLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "GetItemLambdaVersionR79ESm84piPXaipswfvFCCBhMxU15Y3LpPgvrYmhYE"
+              "Ref": "GetItemLambdaVersionfQAvrnayzITV4QnldEEPoGZgWDOv6nRNuHtV26XLNJM"
             },
             "Export": {
               "Name": "sls-library-flask-app-dev-GetItemLambdaFunctionQualifiedArn"
@@ -1136,7 +1136,7 @@
           "UpdateItemLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "UpdateItemLambdaVersionIH9xIGbAS5PTm9Q2mavehdNSKAAp4pu0ULcQV9tF44w"
+              "Ref": "UpdateItemLambdaVersion5PD7a6k69f9Kb0fD7vQu1Xc6qlmHB8nB5EvO45F3s"
             },
             "Export": {
               "Name": "sls-library-flask-app-dev-UpdateItemLambdaFunctionQualifiedArn"
@@ -1145,7 +1145,7 @@
           "DeleteItemLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "DeleteItemLambdaVersionhWhz9BEaP0BgVfOsvLXJy2bAM0M9dqHObMPtirG6eE"
+              "Ref": "DeleteItemLambdaVersionF0B2oZgCpV37NLmiLPFV6n6DFzQlDEHmmi5ZH70wwU"
             },
             "Export": {
               "Name": "sls-library-flask-app-dev-DeleteItemLambdaFunctionQualifiedArn"
@@ -1292,7 +1292,7 @@
         "timeout": 6,
         "runtime": "python3.8",
         "vpc": {},
-        "versionLogicalId": "AppLambdaVersionrHd5tTmxYjEXb0HKfNVEQOTtRV7ROD51k3POY4R5WJg"
+        "versionLogicalId": "AppLambdaVersionObOitzVzBKxqj6eTfxO7ax1UTXZjyqmun32ixeJyRsI"
       },
       "createItem": {
         "handler": "wsgi_handler.handler",
@@ -1307,7 +1307,7 @@
         "timeout": 6,
         "runtime": "python3.8",
         "vpc": {},
-        "versionLogicalId": "CreateItemLambdaVersionumtHBXiKEY8ckvo0GZ02RsfmGGL8dpSYGoTcjy2OOY"
+        "versionLogicalId": "CreateItemLambdaVersiongIeNObYWlukyjBGQFJWFGA4qGFgdYwcNG6XK0BZHU"
       },
       "list": {
         "handler": "wsgi_handler.handler",
@@ -1322,7 +1322,7 @@
         "timeout": 6,
         "runtime": "python3.8",
         "vpc": {},
-        "versionLogicalId": "ListLambdaVersionQWshCbwgNHKMiWbVOzpxhaKcViMePqAMeAgsUw1azA"
+        "versionLogicalId": "ListLambdaVersionqBQ8s49pFfHbFCyjXsHkQmJAI9mbezoCsvaL6VvTGPQ"
       },
       "getItem": {
         "handler": "wsgi_handler.handler",
@@ -1337,7 +1337,7 @@
         "timeout": 6,
         "runtime": "python3.8",
         "vpc": {},
-        "versionLogicalId": "GetItemLambdaVersionR79ESm84piPXaipswfvFCCBhMxU15Y3LpPgvrYmhYE"
+        "versionLogicalId": "GetItemLambdaVersionfQAvrnayzITV4QnldEEPoGZgWDOv6nRNuHtV26XLNJM"
       },
       "updateItem": {
         "handler": "wsgi_handler.handler",
@@ -1352,7 +1352,7 @@
         "timeout": 6,
         "runtime": "python3.8",
         "vpc": {},
-        "versionLogicalId": "UpdateItemLambdaVersionIH9xIGbAS5PTm9Q2mavehdNSKAAp4pu0ULcQV9tF44w"
+        "versionLogicalId": "UpdateItemLambdaVersion5PD7a6k69f9Kb0fD7vQu1Xc6qlmHB8nB5EvO45F3s"
       },
       "deleteItem": {
         "handler": "wsgi_handler.handler",
@@ -1367,7 +1367,7 @@
         "timeout": 6,
         "runtime": "python3.8",
         "vpc": {},
-        "versionLogicalId": "DeleteItemLambdaVersionhWhz9BEaP0BgVfOsvLXJy2bAM0M9dqHObMPtirG6eE"
+        "versionLogicalId": "DeleteItemLambdaVersionF0B2oZgCpV37NLmiLPFV6n6DFzQlDEHmmi5ZH70wwU"
       }
     },
     "resources": {
@@ -1422,7 +1422,7 @@
     "artifact": "/home/prakharsingh/PycharmProjects/LibraryFlaskApp/.serverless/library-flask-app.zip"
   },
   "package": {
-    "artifactDirectoryName": "serverless/library-flask-app/dev/1667283832327-2022-11-01T06:23:52.327Z",
+    "artifactDirectoryName": "serverless/library-flask-app/dev/1667456696424-2022-11-03T06:24:56.424Z",
     "artifact": "library-flask-app.zip"
   }
 }

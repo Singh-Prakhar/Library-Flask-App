@@ -1,38 +1,31 @@
 import os
-
+import uuid
 import boto3
-
+from dynamodb_util import DynamodbUtil
 from flask import Flask, jsonify, request, json
 
 app = Flask(__name__)
 
-LIBRARY_TABLE = os.environ['LIBRARY_TABLE']
+
 client = boto3.client('dynamodb')
 dynamodb = boto3.resource('dynamodb')
+ddb_util = DynamodbUtil()
 
 
 @app.route("/hello")
 def hello():
-    return "Hello World!" + "Params: " + request.args['serialId']
+    return "Hello World!"
 
 
 @app.route("/item", methods=["POST"])
-def create_user():
-    serial_id = request.json.get('serialId')
+def create_item():
     book_name = request.json.get('bookName')
     author_name = request.json.get('authorName')
 
-    if not serial_id or not book_name or not author_name:
+    if not book_name or not author_name:
         return jsonify({'error': 'Please provide complete information'}), 400
 
-    resp = client.put_item(
-        TableName=LIBRARY_TABLE,
-        Item={
-            'serialId': {'S': serial_id},
-            'bookName': {'S': book_name},
-            'authorName': {'S': author_name}
-        }
-    )
+    resp, serial_id = ddb_util.insert_item(book_name,author_name)
 
     return jsonify({
         'serialId': serial_id,
@@ -42,22 +35,17 @@ def create_user():
 
 
 @app.route("/item", methods=["GET"])
-def get_user():
-
+def get_item():
+    serial_id = None
 
     serial_id = request.args['serialId']
 
     if serial_id is None:
-        return jsonify({'error': 'SerialId does not exist'}), 404
+        return jsonify({'error': 'SerialId missing'}), 404
 
-    resp = client.get_item(
-        TableName=LIBRARY_TABLE,
-        Key={
-            'serialId': {'S': serial_id}
-        }
-    )
+    response = ddb_util.get_item(serial_id)
+    item = response['Item']
 
-    item = resp['Item']
     if not item:
         return jsonify({'error': 'SerialId does not exist'}), 404
 
@@ -71,79 +59,47 @@ def get_user():
 
 @app.route("/itemlist", methods=["GET"])
 def list_all_books():
-    table = dynamodb.Table(LIBRARY_TABLE)
-    result = table.scan()
-
+    result = ddb_util.get_all_items()
     response = {
         "statusCode": 200,
         "body": json.dumps(result['Items'])
     }
-
     return response
 
 
 @app.route("/updateitem", methods=['PUT'])
 def update():
+    serial_id = None
+    book_name = None
+    author_name = None
+    if 'serialId' in request.args:
+        serial_id = request.args['serialId']
+    if 'bookName' in request.args:
+        book_name = request.args['bookName']
+    if 'authorName' in request.args:
+        author_name = request.args['authorName']
 
-    serial_id = request.json.get('serialId')
-    book_name = request.json.get('bookName')
-    author_name = request.json.get('authorName')
+    if serial_id is None:
+        return jsonify({'error': 'Please provide serial ID'}), 400
 
-    if not serial_id or not book_name or not author_name:
-        return jsonify({'error': 'Please provide complete information'}), 400
-
-    table = dynamodb.Table(LIBRARY_TABLE)
-
-    if book_name:
-        table.update_item(
-            Key={
-                'serialId': serial_id,
-            },
-            UpdateExpression="set bookName = :g",
-            ExpressionAttributeValues={
-                    ":g": book_name
-            },
-            ReturnValues="UPDATED_NEW"
-        )
-
-    if author_name:
-        table.update_item(
-            Key={
-                'serialId': serial_id,
-            },
-            UpdateExpression="set authorName = :g",
-            ExpressionAttributeValues={
-                ":g": author_name
-            },
-            ReturnValues="UPDATED_NEW"
-        )
+    response = ddb_util.update_item(serial_id, book_name, author_name)
 
     return jsonify({
-        "MSG" : "New Updates=>",
-        'serialId': serial_id,
-        'bookName': book_name,
-        'authorName': author_name
+        "MSG": response
     })
 
 
-# Todo: add a check mechanism for ID
 @app.route("/deleteitem", methods=['DELETE'])
 def delete():
-    table = dynamodb.Table(LIBRARY_TABLE)
 
-    to_delete_id = request.json.get('serialId')
+    to_delete_id = request.args['serialId']
 
     if not to_delete_id:
-        return jsonify({'error': 'Please provide complete information'}), 400
+        return jsonify({'error': 'Please provide correct ID'}), 400
 
-    table.delete_item(
-        Key={
-            'serialId': to_delete_id
-        }
-    )
+    ddb_util.delete_item(to_delete_id)
 
-    response = {
-        "statusCode": 200
-    }
+    return jsonify({
+        'status code': "200"
+    })
 
-    return response
