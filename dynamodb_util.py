@@ -19,7 +19,7 @@ class DynamodbUtil:
                 'authorName': {'S': author_name}
             }
         )
-        return resp,serial_id
+        return resp, serial_id
 
     def get_item(self, serial_id):
         resp = self.client.get_item(
@@ -61,7 +61,15 @@ class DynamodbUtil:
                 ReturnValues="UPDATED_NEW"
             )
 
-        return "Information updated"
+        if book_name and author_name:
+            return "Information updated. New book name: " + book_name + "New author name" + author_name
+        elif author_name:
+            return "New author name " + author_name
+        elif book_name:
+            return "New book name " + book_name
+        else:
+            return "No new updates"
+
 
     def delete_item(self, serial_id):
         table = self.dynamodb.Table(self.LIBRARY_TABLE)
@@ -70,3 +78,4 @@ class DynamodbUtil:
                 'serialId': serial_id
             }
         )
+        return "Item deleted with serial id " + serial_id
